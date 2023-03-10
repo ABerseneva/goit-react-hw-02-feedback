@@ -1,10 +1,18 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-
-const Section = () => {
-    return <div>
-        <h1>{this.props.title}</h1>
-    </div>
+const Section = ({ title, children }) => {
+  return (
+    <section>
+      {title && <h1>{title}</h1>}
+      {children}
+    </section>
+  );
 };
 
 export default Section;
+
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+};
